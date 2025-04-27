@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دندانپزشکی دکتر پوریا کمانگر</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            background-color: #f5faff;
+            color: #333;
+            direction: rtl;
+        }
+        header {
+            background-color: #0077cc;
+            color: white;
+            padding: 1rem;
+            position: relative;
+            text-align: center;
+        }
+        header h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            margin: 0;
+        }
+        header h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            margin: 0;
+        }
+        header img {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 60px;
+            height: 60px;
+        }
+        nav {
+            background-color: #005fa3;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 0.5rem;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        main {
+            padding: 1rem;
+        }
+        .home-content {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .slider {
+            flex: 1;
+            min-width: 300px;
+            padding: 1rem;
+            text-align: center;
+        }
+        .slider img {
+            width: 80%;
+            max-width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .text-section {
+            flex: 1;
+            min-width: 300px;
+            padding: 0.5rem;
+            margin-top: -20px;
+            text-align: center;
+        }
+        .text-section .services {
+            color: #0077cc;
+            font-weight: bold;
+        }
+        .contact-section {
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+        .image-section {
+            flex: 1;
+            min-width: 300px;
+            padding: 1rem;
+            text-align: center;
+        }
+        .image-section img {
+            width: 80%;
+            max-width: 400px;
+            border-radius: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        section.gallery img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        footer {
+            background-color: #0077cc;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="tooth-icon.png" alt="لوگو دندانپزشکی">
+        <h1>دندانپزشکی دکتر پوریا کمانگر</h1>
+        <h2>Dr. Pouria Kamangar</h2>
+    </header>
+    <nav>
+        <a href="#home">خانه</a>
+        <a href="#gallery">گالری</a>
+        <a href="#contact">تماس با ما</a>
+    </nav>
+    <main>
+        <section id="home" class="home-content">
+            <div class="slider">
+                <img id="sampleImage" src="sample1.jpg" alt="نمونه کار">
+            </div>
+            <div class="text-section">
+                <h2>خوش آمدید!</h2>
+                <p>ما در دندانپزشکی دکتر پوریا کمانگر، لبخندی سالم و زیبا برای شما به ارمغان می‌آوریم.</p>
+                <p class="services">خدمات ما شامل ایمپلنت، جراحی، درمان ریشه، ارتدنسی، کودکان می باشد.</p>
+                <div class="contact-section">
+                    <h2>تماس با ما</h2>
+                    <p>آدرس: ماهشهر، خیابان منتظری، جنب داروخانه راسخ، ساختمان سلامت، طبقه اول</p>
+                    <p>تلفن: 09904299969</p>
+                </div>
+            </div>
+            <div class="image-section">
+                <img src="doctor.jpg" alt="دکتر پوریا کمانگر">
+                <p style="font-size: 0.9rem; margin-top: 0.5rem;">(عکس قابل تغییر)</p>
+            </div>
+        </section>
+
+        <section id="gallery" class="gallery">
+            <h2>گالری نمونه کارها</h2>
+            <p>در اینجا می‌توانید برخی از نمونه کارهای ما را مشاهده کنید.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 دندانپزشکی دکتر پوریا کمانگر - تمام حقوق محفوظ است</p>
+    </footer>
+
+    <script>
+        const images = ["sample1.jpg", "sample2.jpg", "sample3.jpg"];
+        let currentIndex = 0;
+        const sampleImage = document.getElementById("sampleImage");
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % images.length;
+            sampleImage.src = images[currentIndex];
+        }, 2000);
+    </script>
+</body>
+</html>
