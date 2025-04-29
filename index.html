@@ -136,6 +136,8 @@
     .contact-section p i {
       margin-left: 5px;
     }
+
+    /* گالری جدید با آیکون‌ها */
     .gallery {
       text-align: center;
       margin-top: 2rem;
@@ -143,27 +145,28 @@
     .gallery h2 {
       color: #005fa3;
     }
-    .gallery-images {
+    .gallery-icons {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      gap: 1rem;
-      margin-top: 1rem;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 2rem;
     }
-    .gallery-images img {
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.15);
-      border: 2px solid #e0e0e0;
-      transition: all 0.4s ease;
+    .gallery-icons i {
+      font-size: 3.5rem;
+      color: #0077cc;
+      background-color: #e0f7ff;
+      padding: 1rem;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0, 119, 204, 0.2);
+      transition: transform 0.3s ease;
     }
-    .gallery-images img:hover {
-      transform: scale(1.08);
-      box-shadow: 0 0 20px rgba(0,150,255,0.6);
-      border: 2px solid #0099ff;
+    .gallery-icons i:hover {
+      transform: scale(1.2);
+      color: #005fa3;
+      background-color: #d0ecff;
     }
+
     footer {
       background-color: #0077cc;
       color: white;
@@ -221,14 +224,14 @@
     </section>
 
     <section id="gallery" class="gallery">
-      <h2>گالری نمونه کارها</h2>
-      <p>برخی از نمونه کارهای ما را ببینید:</p>
-      <div class="gallery-images">
-        <img src="gallery1.jpg" alt="نمونه کار 1">
-        <img src="gallery2.jpg" alt="نمونه کار 2">
-        <img src="gallery3.jpg" alt="نمونه کار 3">
-        <img src="gallery4.jpg" alt="نمونه کار 4">
-        <img src="gallery5.jpg" alt="نمونه کار 5">
+      <h2>خدمات دندانپزشکی</h2>
+      <p>برخی از خدمات ما را در یک نگاه ببینید:</p>
+      <div class="gallery-icons">
+        <i class="fas fa-tooth"></i>
+        <i class="fas fa-smile"></i>
+        <i class="fas fa-heartbeat"></i>
+        <i class="fas fa-user-doctor"></i>
+        <i class="fas fa-teeth-open"></i>
       </div>
     </section>
   </main>
