@@ -1,253 +1,1239 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl" data-theme="clinical">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>کلینیک دندانپزشکی سلامت | دکتر پوریا کمانگر</title>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta name="description" content="کلینیک دندانپزشکی سلامت در ماهشهر — دکتر پوریا کمانگر (Dr. Pourya Kamangar). خدمات ایمپلنت، جراحی، درمان ریشه، ارتدنسی و دندانپزشکی کودکان.">
+  <meta name="theme-color" content="#0F5C65" id="metaThemeColor">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("salamat-theme");
+        if (t === "clinical" || t === "luxury" || t === "pearl") {
+          document.documentElement.setAttribute("data-theme", t);
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: sans-serif;
-      margin: 0;
-      background: linear-gradient(to bottom right, #f5faff, #ffffff);
-      color: #333;
-      direction: rtl;
-      position: relative;
-      overflow-x: hidden;
+    /* Theme 1 — Clinical Premium (default) */
+    :root,
+    html[data-theme="clinical"] {
+      --ink: #1a2b2e;
+      --muted: #5a6d71;
+      --line: #d7e3e5;
+      --paper: #f3f7f8;
+      --paper-soft: #e8f1f2;
+      --surface: #ffffff;
+      --accent: #0f5c65;
+      --accent-deep: #0a454c;
+      --accent-soft: #c5dde0;
+      --warm: #b8956c;
+      --header-bg: rgba(243, 247, 248, 0.92);
+      --header-border: rgba(215, 227, 229, 0.85);
+      --nav-panel: rgba(255, 255, 255, 0.98);
+      --body-bg:
+        radial-gradient(ellipse 80% 50% at 100% -10%, rgba(197, 221, 224, 0.55), transparent 55%),
+        radial-gradient(ellipse 60% 40% at 0% 20%, rgba(184, 149, 108, 0.12), transparent 50%),
+        linear-gradient(180deg, #eef5f6 0%, #f3f7f8 35%, #f8fbfb 100%);
+      --hero-overlay:
+        linear-gradient(180deg, rgba(10, 40, 44, 0.25) 0%, rgba(10, 40, 44, 0.55) 45%, rgba(10, 40, 44, 0.88) 100%),
+        linear-gradient(90deg, rgba(15, 92, 101, 0.35), transparent 55%);
+      --footer-bg: linear-gradient(180deg, transparent, rgba(197, 221, 224, 0.35));
+      --shadow: 0 12px 40px rgba(15, 92, 101, 0.08);
+      --btn-online-bg: #0f5c65;
+      --btn-online-color: #ffffff;
+      --btn-online-hover: #0a454c;
+      --btn-hero-secondary-bg: #ffffff;
+      --btn-hero-secondary-color: #0a454c;
+      --theme-meta: #0F5C65;
+      --radius: 18px;
+      --container: 1120px;
+      --header-h: 5.75rem;
+      --font: "Vazirmatn", sans-serif;
+      --display: "Cormorant Garamond", Georgia, serif;
     }
-    body::before {
+
+    /* Theme 2 — Luxury Black & Gold */
+    html[data-theme="luxury"] {
+      --ink: #f4efe4;
+      --muted: #b7a78c;
+      --line: #2c2a26;
+      --paper: #0d0d0d;
+      --paper-soft: #171512;
+      --surface: #141210;
+      --accent: #c6a046;
+      --accent-deep: #e6d3a2;
+      --accent-soft: #3a3220;
+      --warm: #d4af37;
+      --header-bg: rgba(10, 10, 10, 0.94);
+      --header-border: rgba(198, 160, 70, 0.22);
+      --nav-panel: rgba(18, 16, 14, 0.98);
+      --body-bg:
+        radial-gradient(ellipse 70% 45% at 100% 0%, rgba(198, 160, 70, 0.14), transparent 55%),
+        radial-gradient(ellipse 50% 40% at 0% 30%, rgba(255, 255, 255, 0.03), transparent 50%),
+        linear-gradient(180deg, #0a0a0a 0%, #10100e 50%, #0d0d0d 100%);
+      --hero-overlay:
+        linear-gradient(180deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.62) 48%, rgba(0, 0, 0, 0.92) 100%),
+        linear-gradient(90deg, rgba(198, 160, 70, 0.22), transparent 55%);
+      --footer-bg: linear-gradient(180deg, transparent, rgba(198, 160, 70, 0.08));
+      --shadow: 0 14px 42px rgba(0, 0, 0, 0.45);
+      --btn-online-bg: #c6a046;
+      --btn-online-color: #141210;
+      --btn-online-hover: #d4af37;
+      --btn-hero-secondary-bg: rgba(255, 255, 255, 0.1);
+      --btn-hero-secondary-color: #f4efe4;
+      --theme-meta: #c6a046;
+    }
+
+    /* Theme 3 — Modern Pearl / Ivory */
+    html[data-theme="pearl"] {
+      --ink: #2c241c;
+      --muted: #7a6f63;
+      --line: #e6ddd2;
+      --paper: #f7f3ec;
+      --paper-soft: #efe6da;
+      --surface: #fffcf8;
+      --accent: #8b6f52;
+      --accent-deep: #5c4634;
+      --accent-soft: #e4d5c3;
+      --warm: #c4a484;
+      --header-bg: rgba(255, 252, 248, 0.94);
+      --header-border: rgba(230, 221, 210, 0.95);
+      --nav-panel: rgba(255, 252, 248, 0.98);
+      --body-bg:
+        radial-gradient(ellipse 80% 50% at 100% -10%, rgba(232, 214, 190, 0.45), transparent 55%),
+        radial-gradient(ellipse 55% 40% at 0% 25%, rgba(255, 255, 255, 0.7), transparent 50%),
+        linear-gradient(180deg, #faf7f2 0%, #f7f3ec 40%, #fbf9f5 100%);
+      --hero-overlay:
+        linear-gradient(180deg, rgba(44, 36, 28, 0.28) 0%, rgba(44, 36, 28, 0.55) 45%, rgba(44, 36, 28, 0.88) 100%),
+        linear-gradient(90deg, rgba(139, 111, 82, 0.28), transparent 55%);
+      --footer-bg: linear-gradient(180deg, transparent, rgba(228, 213, 195, 0.45));
+      --shadow: 0 12px 36px rgba(92, 70, 52, 0.08);
+      --btn-online-bg: #8b6f52;
+      --btn-online-color: #fffcf8;
+      --btn-online-hover: #5c4634;
+      --btn-hero-secondary-bg: #fffcf8;
+      --btn-hero-secondary-color: #5c4634;
+      --theme-meta: #8b6f52;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font);
+      color: var(--ink);
+      background: var(--body-bg);
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      transition: background 0.35s ease, color 0.25s ease;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+      border: 0;
+      background: none;
+      cursor: pointer;
+      color: inherit;
+    }
+
+    .container {
+      width: min(100% - 2rem, var(--container));
+      margin-inline: auto;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      right: 1rem;
+      z-index: 1000;
+      background: var(--accent);
+      color: #fff;
+      padding: 0.75rem 1rem;
+      border-radius: 0.5rem;
+    }
+
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      min-height: var(--header-h);
+      display: flex;
+      align-items: center;
+      padding: 0.85rem 0;
+      background: var(--header-bg);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--header-border);
+    }
+
+    .site-header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.85rem;
+      width: min(100% - 1.5rem, var(--container));
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      min-width: 0;
+      flex: 1;
+    }
+
+    .brand img {
+      width: 3rem;
+      height: 3rem;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.2rem;
+      min-width: 0;
+      line-height: 1.3;
+    }
+
+    .brand-clinic {
+      margin: 0;
+      font-size: clamp(1rem, 3.2vw, 1.2rem);
+      font-weight: 700;
+      color: var(--accent-deep);
+      letter-spacing: -0.01em;
+    }
+
+    .brand-doctor {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.15rem 0.45rem;
+      color: var(--muted);
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    .brand-doctor-en {
+      font-family: var(--display);
+      font-size: 0.95em;
+      letter-spacing: 0.02em;
+      color: var(--warm);
+    }
+
+    .brand-doctor-sep {
+      opacity: 0.45;
+      font-weight: 400;
+    }
+
+    .header-tools {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      flex-shrink: 0;
+    }
+
+    .nav-toggle {
+      width: 2.75rem;
+      height: 2.75rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.75rem;
+      border: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .nav-toggle span,
+    .nav-toggle span::before,
+    .nav-toggle span::after {
+      display: block;
+      width: 1.1rem;
+      height: 2px;
+      background: var(--ink);
+      position: relative;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+
+    .nav-toggle span::before,
+    .nav-toggle span::after {
       content: "";
       position: absolute;
-      top: 0;
       left: 0;
+    }
+
+    .nav-toggle span::before { top: -6px; }
+    .nav-toggle span::after { top: 6px; }
+
+    .site-header.is-open .nav-toggle span {
+      background: transparent;
+    }
+
+    .site-header.is-open .nav-toggle span::before {
+      top: 0;
+      transform: rotate(45deg);
+    }
+
+    .site-header.is-open .nav-toggle span::after {
+      top: 0;
+      transform: rotate(-45deg);
+    }
+
+    .site-nav {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--nav-panel);
+      border-bottom: 1px solid var(--line);
+      padding: 1rem 1.25rem 1.25rem;
+      display: none;
+      flex-direction: column;
+      gap: 0.35rem;
+      box-shadow: var(--shadow);
+    }
+
+    .site-header.is-open .site-nav {
+      display: flex;
+    }
+
+    .site-nav a {
+      padding: 0.85rem 0.75rem;
+      border-radius: 0.75rem;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .site-nav a:hover,
+    .site-nav a:focus-visible {
+      background: var(--paper-soft);
+      color: var(--accent);
+      outline: none;
+    }
+
+    .header-cta {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      min-height: 2.75rem;
+      padding: 0 1.1rem;
+      border-radius: 999px;
+      background: var(--accent);
+      color: var(--surface);
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    html[data-theme="luxury"] .header-cta {
+      color: #141210;
+    }
+
+    .header-cta:hover {
+      background: var(--accent-deep);
+    }
+
+    /* Theme switcher */
+    .theme-switcher {
+      position: relative;
+    }
+
+    .theme-toggle {
+      width: 2.75rem;
+      height: 2.75rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.75rem;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--ink);
+    }
+
+    .theme-toggle svg {
+      width: 1.15rem;
+      height: 1.15rem;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .theme-menu {
+      position: absolute;
+      top: calc(100% + 0.45rem);
+      left: 0;
+      min-width: 12.5rem;
+      padding: 0.4rem;
+      border-radius: 0.9rem;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      display: none;
+      z-index: 120;
+    }
+
+    .theme-switcher.is-open .theme-menu {
+      display: grid;
+      gap: 0.2rem;
+    }
+
+    .theme-option {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      width: 100%;
+      text-align: right;
+      padding: 0.7rem 0.65rem;
+      border-radius: 0.65rem;
+      font-size: 0.86rem;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .theme-option:hover,
+    .theme-option:focus-visible {
+      background: var(--paper-soft);
+      outline: none;
+    }
+
+    .theme-option[aria-selected="true"] {
+      background: var(--paper-soft);
+      color: var(--accent-deep);
+      font-weight: 600;
+    }
+
+    .theme-swatch {
+      width: 0.85rem;
+      height: 0.85rem;
+      border-radius: 50%;
+      flex-shrink: 0;
+      border: 1px solid var(--line);
+    }
+
+    .theme-swatch[data-swatch="clinical"] {
+      background: linear-gradient(135deg, #0f5c65, #e8f1f2);
+    }
+
+    .theme-swatch[data-swatch="luxury"] {
+      background: linear-gradient(135deg, #c6a046, #141210);
+    }
+
+    .theme-swatch[data-swatch="pearl"] {
+      background: linear-gradient(135deg, #8b6f52, #f7f3ec);
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: calc(100svh - var(--header-h));
+      display: grid;
+      align-items: end;
+      color: #fff;
+      isolation: isolate;
+    }
+
+    .hero-media {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+    }
+
+    .hero-media img {
       width: 100%;
       height: 100%;
-      background: radial-gradient(circle at top right, rgba(255,255,200,0.4), transparent 60%);
-      backdrop-filter: blur(2px);
-      z-index: 0;
+      object-fit: cover;
+      object-position: center top;
     }
-    header, nav, main, footer {
-      position: relative;
-      z-index: 1;
-    }
-    header {
-      background: linear-gradient(135deg, #0077cc, #005fa3);
-      color: white;
-      padding: 2rem 1rem;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    header::after {
+
+    .hero::after {
       content: "";
       position: absolute;
-      top: -50px;
-      left: -50px;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
-      animation: rotateLight 10s linear infinite;
-      z-index: 0;
+      inset: 0;
+      z-index: -1;
+      background: var(--hero-overlay);
     }
-    @keyframes rotateLight {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+
+    .hero-content {
+      width: min(100% - 2rem, var(--container));
+      margin: 0 auto;
+      padding: 3.5rem 0 3rem;
+      animation: rise 0.8s ease both;
     }
-    header h1 {
-      font-family: 'Dancing Script', cursive;
-      margin: 0.5rem 0;
-      font-size: 2.5rem;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-      animation: shine 3s infinite alternate;
-      position: relative;
-      z-index: 1;
+
+    .hero-content .eyebrow {
+      font-family: var(--display);
+      font-size: clamp(1.15rem, 3vw, 1.45rem);
+      letter-spacing: 0.04em;
+      opacity: 0.92;
+      margin: 0 0 0.5rem;
     }
-    @keyframes shine {
-      0% { text-shadow: 2px 2px 5px rgba(0,0,0,0.3); }
-      100% { text-shadow: 2px 2px 20px rgba(255,255,255,0.8); }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(1.85rem, 6vw, 3.2rem);
+      line-height: 1.25;
+      font-weight: 700;
+      max-width: 14ch;
     }
-    header img {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      width: 60px;
-      height: 60px;
-      z-index: 2;
+
+    html[data-theme="luxury"] .hero h1,
+    html[data-theme="luxury"] .section-head h2,
+    html[data-theme="luxury"] .doctor-copy .name-fa {
+      font-family: var(--display);
+      letter-spacing: 0.01em;
     }
-    nav {
-      background-color: #005fa3;
+
+    .hero-lead {
+      margin: 1rem 0 0;
+      max-width: 34ch;
+      font-size: 1.02rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .hero-actions {
       display: flex;
       flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.75rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
       justify-content: center;
-      gap: 2rem;
-      padding: 0.5rem;
+      min-height: 3.15rem;
+      padding: 0.8rem 1.4rem;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.98rem;
+      transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
     }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
+
+    .btn:hover {
+      transform: translateY(-1px);
     }
-    nav a:hover {
-      color: #ffd700;
+
+    .btn-online {
+      background: var(--btn-online-bg);
+      color: var(--btn-online-color);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+      min-width: min(100%, 11.5rem);
     }
-    main {
-      padding: 1rem;
+
+    .btn-online:hover {
+      background: var(--btn-online-hover);
     }
-    .home-content {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
+
+    .btn-primary {
+      background: var(--btn-hero-secondary-bg);
+      color: var(--btn-hero-secondary-color);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      min-width: min(100%, 11.5rem);
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.05);
+    }
+
+    .btn-ghost {
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      color: #fff;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    /* Sections */
+    .section {
+      padding: 4.5rem 0;
+    }
+
+    .section-head {
+      max-width: 36rem;
+      margin-bottom: 2rem;
+    }
+
+    .section-head h2 {
+      margin: 0 0 0.6rem;
+      font-size: clamp(1.55rem, 3.5vw, 2.1rem);
+      line-height: 1.3;
+      color: var(--accent-deep);
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .doctor {
+      display: block;
+      max-width: 40rem;
+    }
+
+    .doctor-copy .name-fa {
+      margin: 0;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      color: var(--accent-deep);
+    }
+
+    .doctor-copy .name-en {
+      margin: 0.25rem 0 1rem;
+      font-family: var(--display);
+      font-size: 1.35rem;
+      color: var(--warm);
+      letter-spacing: 0.02em;
+    }
+
+    .doctor-copy p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 38rem;
+    }
+
+    .services-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .services-list li {
+      display: grid;
+      grid-template-columns: auto 1fr;
       gap: 1rem;
-    }
-    .slider, .text-section, .image-section {
-      flex: 1;
-      min-width: 300px;
-      text-align: center;
-      padding: 1rem;
-    }
-    .slider img, .image-section img {
-      width: 80%;
-      max-width: 400px;
-      border-radius: 15px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-      transition: transform 0.3s;
-    }
-    .slider img:hover, .image-section img:hover {
-      transform: scale(1.05);
-    }
-    .text-section h2 {
-      color: #0077cc;
-    }
-    .services {
-      font-weight: bold;
-      color: #005fa3;
-      margin: 1rem 0;
-    }
-    .contact-section {
-      margin-top: 1rem;
-      background-color: #e0f0ff;
-      padding: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-    .contact-section p i {
-      margin-left: 5px;
+      align-items: baseline;
+      padding: 1.15rem 0;
+      border-bottom: 1px solid var(--line);
     }
 
-    /* گالری جدید با آیکون‌ها */
-    .gallery {
-      text-align: center;
-      margin-top: 2rem;
+    .services-list .num {
+      font-family: var(--display);
+      font-size: 1.25rem;
+      color: var(--warm);
+      min-width: 1.75rem;
     }
-    .gallery h2 {
-      color: #005fa3;
+
+    .services-list strong {
+      display: block;
+      font-size: 1.05rem;
+      margin-bottom: 0.15rem;
     }
-    .gallery-icons {
+
+    .services-list span {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .gallery-layout {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .slider-panel {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--accent-deep);
+      aspect-ratio: 16 / 11;
+      box-shadow: var(--shadow);
+    }
+
+    .slider-panel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.55s ease;
+      position: absolute;
+      inset: 0;
+    }
+
+    .slider-panel img.is-active {
+      opacity: 1;
+      position: relative;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+
+    .gallery-grid figure {
+      margin: 0;
+      border-radius: 14px;
+      overflow: hidden;
+      aspect-ratio: 1;
+      background: var(--paper-soft);
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.45s ease;
+    }
+
+    .gallery-grid figure:hover img {
+      transform: scale(1.04);
+    }
+
+    .contact-block {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .contact-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 1.15rem;
+    }
+
+    .contact-list li {
+      display: grid;
+      gap: 0.25rem;
+    }
+
+    .contact-list .label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.02em;
+    }
+
+    .contact-list a,
+    .contact-list p {
+      margin: 0;
+      font-size: 1.05rem;
+      color: var(--ink);
+    }
+
+    .contact-list a:hover {
+      color: var(--accent);
+    }
+
+    .contact-actions {
       display: flex;
-      justify-content: center;
       flex-wrap: wrap;
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-    .gallery-icons i {
-      font-size: 3.5rem;
-      color: #0077cc;
-      background-color: #e0f7ff;
-      padding: 1rem;
-      border-radius: 50%;
-      box-shadow: 0 0 10px rgba(0, 119, 204, 0.2);
-      transition: transform 0.3s ease;
-    }
-    .gallery-icons i:hover {
-      transform: scale(1.2);
-      color: #005fa3;
-      background-color: #d0ecff;
+      gap: 0.75rem;
     }
 
-    footer {
-      background-color: #0077cc;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
+    .contact-actions .btn-primary {
+      background: var(--accent);
+      color: var(--surface);
+      border: 0;
+      min-width: 0;
     }
-    @media (max-width: 768px) {
-      .home-content {
-        flex-direction: column;
+
+    html[data-theme="luxury"] .contact-actions .btn-primary {
+      color: #141210;
+    }
+
+    .contact-actions .btn-primary:hover {
+      background: var(--accent-deep);
+      filter: none;
+    }
+
+    .contact-actions .btn-outline {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--ink);
+    }
+
+    .contact-actions .btn-outline:hover {
+      border-color: var(--accent-soft);
+      background: var(--paper-soft);
+    }
+
+    .site-footer {
+      border-top: 1px solid var(--line);
+      padding: 2rem 0 2.5rem;
+      background: var(--footer-bg);
+    }
+
+    .site-footer .container {
+      display: grid;
+      gap: 0.65rem;
+      text-align: center;
+    }
+
+    .site-footer strong {
+      color: var(--accent-deep);
+    }
+
+    .site-footer .en {
+      font-family: var(--display);
+      color: var(--muted);
+    }
+
+    .site-footer small {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (min-width: 720px) {
+      .nav-toggle {
+        display: none;
+      }
+
+      .site-nav {
+        position: static;
+        display: flex;
+        flex-direction: row;
         align-items: center;
+        gap: 0.25rem;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        box-shadow: none;
+      }
+
+      .site-nav a {
+        padding: 0.45rem 0.7rem;
+        font-size: 0.92rem;
+      }
+
+      .header-cta {
+        display: inline-flex;
+      }
+
+      .brand {
+        flex: 0 1 auto;
+        max-width: 22rem;
+      }
+
+      .brand img {
+        width: 3.25rem;
+        height: 3.25rem;
+      }
+
+      .brand-clinic {
+        font-size: 1.18rem;
+      }
+
+      .brand-doctor {
+        font-size: 0.84rem;
+      }
+
+      .theme-menu {
+        left: auto;
+        right: 0;
+      }
+
+      .gallery-layout {
+        grid-template-columns: 1.25fr 1fr;
+        align-items: stretch;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.9rem;
+      }
+
+      .contact-block {
+        grid-template-columns: 1.2fr 0.8fr;
+        align-items: end;
+      }
+    }
+
+    @media (min-width: 980px) {
+      .services-list {
+        grid-template-columns: 1fr 1fr;
+        gap: 0 2.5rem;
+        border-top: 0;
+      }
+
+      .services-list li:nth-child(-n + 2) {
+        border-top: 1px solid var(--line);
+      }
+
+      .hero-content {
+        padding: 5rem 0 4.5rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      body { transition: none; }
+      .hero-content,
+      .slider-panel img,
+      .gallery-grid img,
+      .btn {
+        animation: none !important;
+        transition: none !important;
       }
     }
   </style>
 </head>
-
 <body>
-  <header>
-    <img src="tooth-icon.png" alt="لوگو دندانپزشکی">
-    <h1>کلینیک دندانپزشکی سلامت | دکتر پوریا کمانگر</h1>
+  <a class="skip-link" href="#main">رفتن به محتوای اصلی</a>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container">
+      <a class="brand" href="#home" aria-label="کلینیک دندانپزشکی سلامت — دکتر پوریا کمانگر">
+        <img src="tooth-icon.png" width="52" height="52" alt="">
+        <span class="brand-text">
+          <span class="brand-clinic">کلینیک دندانپزشکی سلامت</span>
+          <span class="brand-doctor">
+            <span class="brand-doctor-fa">دکتر پوریا کمانگر</span>
+            <span class="brand-doctor-sep" aria-hidden="true">|</span>
+            <span class="brand-doctor-en">Dr. Pourya Kamangar</span>
+          </span>
+        </span>
+      </a>
+
+      <nav class="site-nav" id="siteNav" aria-label="منوی اصلی">
+        <a href="#home">خانه</a>
+        <a href="#doctor">درباره پزشک</a>
+        <a href="#services">خدمات</a>
+        <a href="#gallery">گالری</a>
+        <a href="#contact">تماس</a>
+      </nav>
+
+      <div class="header-tools">
+        <a class="header-cta" href="tel:09904299969">رزرو نوبت</a>
+
+        <div class="theme-switcher" id="themeSwitcher">
+          <button
+            class="theme-toggle"
+            id="themeToggle"
+            type="button"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-controls="themeMenu"
+            aria-label="انتخاب ظاهر سایت"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+            </svg>
+          </button>
+          <div class="theme-menu" id="themeMenu" role="listbox" aria-label="تم‌های سایت" hidden>
+            <button class="theme-option" type="button" role="option" data-theme="clinical" aria-selected="true">
+              <span class="theme-swatch" data-swatch="clinical" aria-hidden="true"></span>
+              Clinical Premium
+            </button>
+            <button class="theme-option" type="button" role="option" data-theme="luxury" aria-selected="false">
+              <span class="theme-swatch" data-swatch="luxury" aria-hidden="true"></span>
+              Luxury Black &amp; Gold
+            </button>
+            <button class="theme-option" type="button" role="option" data-theme="pearl" aria-selected="false">
+              <span class="theme-swatch" data-swatch="pearl" aria-hidden="true"></span>
+              Modern Pearl
+            </button>
+          </div>
+        </div>
+
+        <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="siteNav" aria-label="باز و بسته کردن منو">
+          <span></span>
+        </button>
+      </div>
+    </div>
   </header>
 
-  <nav>
-    <a href="#home">خانه</a>
-    <a href="#gallery">گالری</a>
-    <a href="#contact">تماس با ما</a>
-  </nav>
-
-  <main>
-    <section id="home" class="home-content">
-      <div class="slider">
-        <img id="sampleImage" src="sample1.jpg" alt="نمونه کار دندانپزشکی">
+  <main id="main">
+    <section class="hero" id="home" aria-label="معرفی کلینیک">
+      <div class="hero-media">
+        <img src="doctor.jpg" alt="دکتر پوریا کمانگر در کلینیک دندانپزشکی سلامت" width="900" height="1200" fetchpriority="high">
       </div>
-      <div class="text-section">
-        <h2>خوش آمدید!</h2>
-        <p>ما در دندانپزشکی دکتر پوریا کمانگر، لبخندی سالم و زیبا برای شما به ارمغان می‌آوریم.</p>
-        <p class="services">خدمات ما: ایمپلنت، جراحی، درمان ریشه، ارتدنسی، کودکان</p>
-
-        <div class="contact-section" id="contact">
-          <h2>تماس با ما</h2>
-          <p><i class="fas fa-map-marker-alt"></i> ماهشهر، خیابان منتظری، جنب داروخانه راسخ، ساختمان سلامت، طبقه اول</p>
-          <p><i class="fas fa-phone"></i> 09904299969</p>
-          <p><i class="fab fa-instagram" style="color: #e63946;"></i> 
-            <a href="https://www.instagram.com/dr.pourya.kamangar" target="_blank" style="color: #e63946; text-decoration: none; font-weight: bold;">
-              صفحه اینستاگرام ما
-            </a>
-          </p>
+      <div class="hero-content">
+        <p class="eyebrow">Salamat Dental Clinic</p>
+        <h1>کلینیک دندانپزشکی سلامت</h1>
+        <p class="hero-lead">لبخندی سالم و زیبا، با مراقبتی دقیق و حرفه‌ای در ماهشهر.</p>
+        <div class="hero-actions">
+          <a class="btn btn-online" id="onlineAppointmentBtn" href="ONLINE_APPOINTMENT_URL" target="_blank" rel="noopener noreferrer">نوبت آنلاین</a>
+          <a class="btn btn-primary" href="tel:09904299969">تماس برای نوبت</a>
+          <a class="btn btn-ghost" href="#gallery">مشاهده نمونه کارها</a>
         </div>
-      </div>
-
-      <div class="image-section">
-        <img src="doctor.jpg" alt="دکتر پوریا کمانگر">
-        <p style="font-size: 0.9rem; margin-top: 0.5rem;">(عکس قابل تغییر)</p>
       </div>
     </section>
 
-    <section id="gallery" class="gallery">
-      <h2>خدمات دندانپزشکی</h2>
-      <p>برخی از خدمات ما را در یک نگاه ببینید:</p>
-      <div class="gallery-icons">
-        <i class="fas fa-tooth"></i>
-        <i class="fas fa-smile"></i>
-        <i class="fas fa-heartbeat"></i>
-        <i class="fas fa-user-doctor"></i>
-        <i class="fas fa-teeth-open"></i>
+    <section class="section" id="doctor" aria-labelledby="doctor-title">
+      <div class="container doctor">
+        <div class="doctor-copy">
+          <div class="section-head">
+            <h2 id="doctor-title">پزشک معالج</h2>
+          </div>
+          <p class="name-fa">دکتر پوریا کمانگر</p>
+          <p class="name-en">Dr. Pourya Kamangar</p>
+          <p>
+            در کلینیک دندانپزشکی سلامت، تمرکز ما بر تشخیص دقیق، درمان اصولی و تجربه‌ای آرام برای بیماران است.
+            از ایمپلنت و جراحی تا ارتدنسی و دندانپزشکی کودکان، خدمات با استاندارد حرفه‌ای ارائه می‌شود.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services" aria-labelledby="services-title" style="padding-top: 0;">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="services-title">خدمات کلینیک</h2>
+          <p>مجموعه‌ای کامل از درمان‌های تخصصی برای سلامت و زیبایی لبخند شما.</p>
+        </div>
+        <ul class="services-list">
+          <li>
+            <span class="num" aria-hidden="true">01</span>
+            <div>
+              <strong>ایمپلنت</strong>
+              <span>جایگزینی پایدار دندان‌های از دست‌رفته</span>
+            </div>
+          </li>
+          <li>
+            <span class="num" aria-hidden="true">02</span>
+            <div>
+              <strong>جراحی</strong>
+              <span>مداخلات جراحی با دقت و مراقبت کامل</span>
+            </div>
+          </li>
+          <li>
+            <span class="num" aria-hidden="true">03</span>
+            <div>
+              <strong>درمان ریشه</strong>
+              <span>حفظ دندان و رفع عفونت با روش استاندارد</span>
+            </div>
+          </li>
+          <li>
+            <span class="num" aria-hidden="true">04</span>
+            <div>
+              <strong>ارتدنسی</strong>
+              <span>مرتب‌سازی لبخند با برنامه‌ریزی تخصصی</span>
+            </div>
+          </li>
+          <li>
+            <span class="num" aria-hidden="true">05</span>
+            <div>
+              <strong>دندانپزشکی کودکان</strong>
+              <span>مراقبتی آرام و مناسب برای کودکان</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="gallery" aria-labelledby="gallery-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="gallery-title">گالری و نمونه کارها</h2>
+          <p>نگاهی به فضای کلینیک و نمونه‌هایی از نتایج درمان.</p>
+        </div>
+        <div class="gallery-layout">
+          <div class="slider-panel" aria-label="اسلایدر نمونه کارها">
+            <img id="sampleImage" class="is-active" src="sample1.jpg" alt="نمونه کار دندانپزشکی ۱" width="800" height="550">
+            <img src="sample2.jpg" alt="نمونه کار دندانپزشکی ۲" width="800" height="550" loading="lazy">
+            <img src="sample3.jpg" alt="نمونه کار دندانپزشکی ۳" width="800" height="550" loading="lazy">
+          </div>
+          <div class="gallery-grid">
+            <figure>
+              <img src="gallery5.jpg" alt="نمای کلینیک دندانپزشکی سلامت" width="480" height="480" loading="lazy">
+            </figure>
+            <figure>
+              <img src="your-image2.jpg" alt="فضای درمانی کلینیک" width="480" height="480" loading="lazy">
+            </figure>
+            <figure>
+              <img src="gallery1.jpg" alt="نمونه تصویر کلینیک" width="480" height="480" loading="lazy">
+            </figure>
+            <figure>
+              <img src="IMG-20250423-WA0013.jpg" alt="جزئیات فضای کلینیک" width="480" height="480" loading="lazy">
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="contact-title">تماس با ما</h2>
+          <p>برای رزرو نوبت یا مشاوره، از راه‌های زیر با ما در ارتباط باشید.</p>
+        </div>
+        <div class="contact-block">
+          <ul class="contact-list">
+            <li>
+              <span class="label">آدرس</span>
+              <p>ماهشهر، خیابان منتظری، جنب داروخانه راسخ، ساختمان سلامت، طبقه اول</p>
+            </li>
+            <li>
+              <span class="label">تلفن</span>
+              <a href="tel:09904299969">09904299969</a>
+            </li>
+            <li>
+              <span class="label">اینستاگرام</span>
+              <a href="https://www.instagram.com/dr.pourya.kamangar" target="_blank" rel="noopener noreferrer">@dr.pourya.kamangar</a>
+            </li>
+            <li>
+              <span class="label">پزشک</span>
+              <p>دکتر پوریا کمانگر — Dr. Pourya Kamangar</p>
+            </li>
+          </ul>
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="tel:09904299969">تماس تلفنی</a>
+            <a class="btn btn-outline" href="https://www.instagram.com/dr.pourya.kamangar" target="_blank" rel="noopener noreferrer">اینستاگرام</a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 دندانپزشکی دکتر پوریا کمانگر - تمام حقوق محفوظ است</p>
+  <footer class="site-footer">
+    <div class="container">
+      <strong>کلینیک دندانپزشکی سلامت</strong>
+      <span class="en">Salamat Dental Clinic</span>
+      <span>دکتر پوریا کمانگر | Dr. Pourya Kamangar</span>
+      <small>&copy; 2025 کلینیک دندانپزشکی سلامت — تمام حقوق محفوظ است</small>
+    </div>
   </footer>
 
   <script>
-    const images = ["sample1.jpg", "sample2.jpg", "sample3.jpg"];
-    let currentIndex = 0;
-    const sampleImage = document.getElementById("sampleImage");
-    setInterval(() => {
-      currentIndex = (currentIndex + 1) % images.length;
-      sampleImage.src = images[currentIndex];
-    }, 2000);
+    (function () {
+      /* فقط این مقدار را با URL واقعی سایت نوبت‌دهی عوض کنید */
+      var ONLINE_APPOINTMENT_URL = "ONLINE_APPOINTMENT_URL";
+
+      var onlineBtn = document.getElementById("onlineAppointmentBtn");
+      if (onlineBtn) {
+        onlineBtn.setAttribute("href", ONLINE_APPOINTMENT_URL);
+      }
+
+      var header = document.getElementById("siteHeader");
+      var toggle = document.getElementById("navToggle");
+      var nav = document.getElementById("siteNav");
+      var themeSwitcher = document.getElementById("themeSwitcher");
+      var themeToggle = document.getElementById("themeToggle");
+      var themeMenu = document.getElementById("themeMenu");
+      var themeOptions = themeMenu.querySelectorAll(".theme-option");
+      var metaTheme = document.getElementById("metaThemeColor");
+      var THEME_KEY = "salamat-theme";
+
+      function setNavOpen(open) {
+        header.classList.toggle("is-open", open);
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      }
+
+      function setThemeMenuOpen(open) {
+        themeSwitcher.classList.toggle("is-open", open);
+        themeToggle.setAttribute("aria-expanded", open ? "true" : "false");
+        themeMenu.hidden = !open;
+      }
+
+      function applyTheme(theme) {
+        if (theme !== "clinical" && theme !== "luxury" && theme !== "pearl") {
+          theme = "clinical";
+        }
+        document.documentElement.setAttribute("data-theme", theme);
+        try {
+          localStorage.setItem(THEME_KEY, theme);
+        } catch (e) {}
+
+        themeOptions.forEach(function (opt) {
+          opt.setAttribute("aria-selected", opt.getAttribute("data-theme") === theme ? "true" : "false");
+        });
+
+        var color = getComputedStyle(document.documentElement).getPropertyValue("--theme-meta").trim();
+        if (metaTheme && color) {
+          metaTheme.setAttribute("content", color);
+        }
+      }
+
+      toggle.addEventListener("click", function () {
+        setThemeMenuOpen(false);
+        setNavOpen(!header.classList.contains("is-open"));
+      });
+
+      nav.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+          setNavOpen(false);
+        });
+      });
+
+      themeToggle.addEventListener("click", function (e) {
+        e.stopPropagation();
+        setNavOpen(false);
+        setThemeMenuOpen(!themeSwitcher.classList.contains("is-open"));
+      });
+
+      themeOptions.forEach(function (opt) {
+        opt.addEventListener("click", function () {
+          applyTheme(opt.getAttribute("data-theme"));
+          setThemeMenuOpen(false);
+        });
+      });
+
+      document.addEventListener("click", function (e) {
+        if (!themeSwitcher.contains(e.target)) {
+          setThemeMenuOpen(false);
+        }
+      });
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          setThemeMenuOpen(false);
+          setNavOpen(false);
+        }
+      });
+
+      applyTheme(document.documentElement.getAttribute("data-theme") || "clinical");
+
+      var slides = document.querySelectorAll(".slider-panel img");
+      var index = 0;
+      if (slides.length > 1) {
+        setInterval(function () {
+          slides[index].classList.remove("is-active");
+          index = (index + 1) % slides.length;
+          slides[index].classList.add("is-active");
+        }, 3200);
+      }
+    })();
   </script>
 </body>
 </html>
