@@ -89,6 +89,13 @@
     .article-view h1 { margin: 0 0 0.4rem; font-size: clamp(1.35rem, 3.5vw, 1.9rem); }
     .article-view .meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.25rem; }
     .article-view .body p { margin: 0 0 1rem; }
+    .sources {
+      margin-top: 1.25rem; padding-top: 1rem; border-top: 1px dashed var(--line);
+      font-size: 0.9rem;
+    }
+    .sources h3 { margin: 0 0 0.5rem; font-size: 1rem; }
+    .sources ol { margin: 0; padding-right: 1.2rem; color: var(--muted); }
+    .sources a { word-break: break-all; }
     .cta-box {
       margin-top: 1.5rem; padding: 1rem 1.1rem; border-radius: 14px;
       background: var(--paper-soft); border: 1px solid var(--line);
@@ -197,12 +204,21 @@
         view.classList.add("is-open");
         var paras = (a.body || []).map(function (p) { return "<p>" + p + "</p>"; }).join("");
         var tags = (a.tags || []).map(function (t) { return "<span>" + t + "</span>"; }).join("");
+        var sources = "";
+        if (a.sources && a.sources.length) {
+          sources = '<div class="sources"><h3>منابع و مطالعه بیشتر</h3><ol>' +
+            a.sources.map(function (s) {
+              return "<li><a href=\"" + s.url + "\" target=\"_blank\" rel=\"noopener noreferrer\">" + s.title + "</a></li>";
+            }).join("") +
+            "</ol><p style=\"margin:.65rem 0 0;font-size:.85rem\">متن این صفحه بازنویسی آموزشی است و کپی لفظی منبع نیست.</p></div>";
+        }
         view.innerHTML =
           '<a class="back" href="articles.html">← بازگشت به مقالات</a>' +
           "<h1>" + a.title + "</h1>" +
           '<div class="meta">' + fmtDate(a.date) + " · دکتر پوریا کمانگر · بندر ماهشهر</div>" +
           '<div class="tags">' + tags + "</div>" +
           '<div class="body">' + paras + "</div>" +
+          sources +
           '<div class="cta-box">نوبت و مشاوره: <a href="tel:09904299969">09904299969</a> · ' +
           '<a href="https://www.instagram.com/dr.pourya.kamangar" target="_blank" rel="noopener noreferrer">اینستاگرام</a> · ' +
           '<a href="index.html#contact">آدرس کلینیک</a></div>';
