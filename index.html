@@ -777,6 +777,31 @@
       font-size: 0.95rem;
     }
 
+    .value-strip {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin: 1.1rem 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .value-strip li {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 14px;
+      padding: 0.7rem 0.85rem;
+      font-weight: 600;
+      font-size: 0.92rem;
+      backdrop-filter: blur(6px);
+    }
+
+    @media (min-width: 720px) {
+      .value-strip {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+
     .gallery-layout {
       display: grid;
       gap: 1.5rem;
@@ -1129,7 +1154,13 @@
       <div class="hero-content">
         <p class="eyebrow">Salamat Dental Clinic</p>
         <h1>کلینیک دندانپزشکی سلامت</h1>
-        <p class="hero-lead">لبخندی سالم و زیبا، با مراقبتی دقیق و حرفه‌ای در ماهشهر.</p>
+        <p class="hero-lead">خدمات تخصصی، تجهیزات مدرن، علم روز و مواد باکیفیت — برای لبخندی سالم در بندر ماهشهر.</p>
+        <ul class="value-strip" aria-label="مزایای کلینیک">
+          <li>خدمات تخصصی</li>
+          <li>تجهیزات مدرن</li>
+          <li>علم روز</li>
+          <li>مواد باکیفیت</li>
+        </ul>
         <div class="hero-actions">
           <a class="btn btn-online" id="onlineAppointmentBtn" href="https://kamangar193.ir/online-book.html" target="_blank" rel="noopener noreferrer">نوبت آنلاین</a>
           <a class="btn btn-primary" href="tel:09904299969">تماس برای نوبت</a>
@@ -1147,8 +1178,8 @@
           <p class="name-fa">دکتر پوریا کمانگر</p>
           <p class="name-en">Dr. Pourya Kamangar</p>
           <p>
-            در کلینیک دندانپزشکی سلامت، تمرکز ما بر تشخیص دقیق، درمان اصولی و تجربه‌ای آرام برای بیماران است.
-            از ایمپلنت و جراحی تا ارتدنسی و دندانپزشکی کودکان، خدمات با استاندارد حرفه‌ای ارائه می‌شود.
+            در کلینیک دندانپزشکی سلامت، درمان بر پایه خدمات تخصصی، تجهیزات مدرن، دانش روز دندانپزشکی و مواد باکیفیت انجام می‌شود.
+            از ایمپلنت و جراحی تا ارتدنسی و دندانپزشکی کودکان، تمرکز ما تشخیص دقیق و تجربه‌ای آرام برای بیمار است.
           </p>
         </div>
       </div>
