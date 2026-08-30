@@ -265,6 +265,52 @@
       flex-shrink: 0;
     }
 
+    .ig-promo {
+      position: fixed;
+      top: calc(var(--header-h) + 0.65rem);
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 60;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.55rem 1.05rem;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #f58529, #dd2a7b 45%, #8134af 75%, #515bd4);
+      color: #fff;
+      font-size: 0.92rem;
+      font-weight: 600;
+      box-shadow: 0 10px 28px rgba(129, 52, 175, 0.35);
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .ig-promo:hover {
+      transform: translateX(-50%) translateY(-2px);
+      box-shadow: 0 14px 32px rgba(129, 52, 175, 0.45);
+      color: #fff;
+    }
+
+    .ig-promo svg {
+      width: 1.15rem;
+      height: 1.15rem;
+      flex-shrink: 0;
+    }
+
+    .ig-promo span {
+      letter-spacing: 0.01em;
+    }
+
+    @media (max-width: 640px) {
+      .ig-promo {
+        top: calc(var(--header-h) + 0.4rem);
+        font-size: 0.8rem;
+        padding: 0.45rem 0.85rem;
+        gap: 0.4rem;
+      }
+    }
+
     .nav-toggle {
       width: 2.75rem;
       height: 2.75rem;
@@ -681,6 +727,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center 28%;
       opacity: 0;
       transition: opacity 0.55s ease;
       position: absolute;
@@ -690,6 +737,12 @@
     .slider-panel img.is-active {
       opacity: 1;
       position: relative;
+    }
+
+    .slider-panel img.slide-contain {
+      object-fit: contain;
+      object-position: center;
+      background: #d2d6da;
     }
 
     .gallery-grid {
@@ -920,6 +973,21 @@
 <body>
   <a class="skip-link" href="#main">رفتن به محتوای اصلی</a>
 
+  <a
+    class="ig-promo"
+    href="https://www.instagram.com/dr.pourya.kamangar"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="اینستاگرام دکتر پوریا کمانگر"
+  >
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.8"></rect>
+      <circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.8"></circle>
+      <circle cx="17.4" cy="6.6" r="1.1" fill="currentColor"></circle>
+    </svg>
+    <span>@dr.pourya.kamangar</span>
+  </a>
+
   <header class="site-header" id="siteHeader">
     <div class="container">
       <a class="brand" href="#home" aria-label="کلینیک دندانپزشکی سلامت — دکتر پوریا کمانگر">
@@ -986,7 +1054,7 @@
   <main id="main">
     <section class="hero" id="home" aria-label="معرفی کلینیک">
       <div class="hero-media">
-        <img src="doctor.jpg" alt="دکتر پوریا کمانگر در کلینیک دندانپزشکی سلامت" width="900" height="1200" fetchpriority="high">
+        <img src="doctor.jpg" alt="دکتر پوریا کمانگر در کلینیک دندانپزشکی سلامت" width="900" height="1350" fetchpriority="high">
       </div>
       <div class="hero-content">
         <p class="eyebrow">Salamat Dental Clinic</p>
@@ -1070,22 +1138,23 @@
         </div>
         <div class="gallery-layout">
           <div class="slider-panel" aria-label="اسلایدر نمونه کارها">
-            <img id="sampleImage" class="is-active" src="sample1.jpg" alt="نمونه کار دندانپزشکی ۱" width="800" height="550">
+            <img id="sampleImage" class="is-active slide-contain" src="sample1.jpg" alt="تابلوی کلینیک دندانپزشکی سلامت" width="960" height="660">
             <img src="sample2.jpg" alt="نمونه کار دندانپزشکی ۲" width="800" height="550" loading="lazy">
             <img src="sample3.jpg" alt="نمونه کار دندانپزشکی ۳" width="800" height="550" loading="lazy">
+            <img src="sample02.jpg" alt="نمونه کار دندانپزشکی ۴" width="800" height="550" loading="lazy">
           </div>
           <div class="gallery-grid">
             <figure>
-              <img src="gallery5.jpg" alt="نمای کلینیک دندانپزشکی سلامت" width="480" height="480" loading="lazy">
+              <img src="gallery-before-after-veneers.jpg" alt="قبل و بعد ایمپلنت و پروتز" width="480" height="480" loading="lazy">
             </figure>
             <figure>
-              <img src="your-image2.jpg" alt="فضای درمانی کلینیک" width="480" height="480" loading="lazy">
+              <img src="your-image-before-after.jpg" alt="قبل و بعد ونیر دندان" width="480" height="480" loading="lazy">
             </figure>
             <figure>
-              <img src="gallery1.jpg" alt="نمونه تصویر کلینیک" width="480" height="480" loading="lazy">
+              <img src="gallery-before-after-internet.jpg" alt="قبل و بعد ونیر زیبایی" width="480" height="480" loading="lazy">
             </figure>
             <figure>
-              <img src="IMG-20250423-WA0013.jpg" alt="جزئیات فضای کلینیک" width="480" height="480" loading="lazy">
+              <img src="IMG-20250423-WA0013.jpg" alt="فضای کلینیک دندانپزشکی سلامت" width="480" height="480" loading="lazy">
             </figure>
           </div>
         </div>
