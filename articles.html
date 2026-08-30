@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="clinical">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مقالات آموزشی دندانپزشکی | کلینیک سلامت ماهشهر — دکتر پوریا کمانگر</title>
+  <meta name="description" content="مقالات آموزشی ایمپلنت، ونیر، درمان ریشه و مراقبت دندان در بندر ماهشهر توسط کلینیک دندانپزشکی سلامت — دکتر پوریا کمانگر.">
+  <meta name="keywords" content="مقالات دندانپزشکی, ایمپلنت ماهشهر, ونیر, درمان ریشه, دکتر پوریا کمانگر, دندانپزشک بندر ماهشهر">
+  <link rel="canonical" href="articles.html">
+  <meta name="theme-color" content="#0F5C65">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("salamat-theme");
+        if (t === "clinical" || t === "luxury" || t === "pearl") {
+          document.documentElement.setAttribute("data-theme", t);
+        }
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root, html[data-theme="clinical"] {
+      --ink: #1a2b2e; --muted: #5a6d71; --line: #d7e3e5; --paper: #f3f7f8;
+      --paper-soft: #e8f1f2; --surface: #ffffff; --accent: #0f5c65; --accent-deep: #0a454c;
+      --warm: #b8956c; --radius: 18px; --container: 1120px; --header-h: 5.75rem;
+      --font: "Vazirmatn", sans-serif; --display: "Cormorant Garamond", Georgia, serif;
+      --body-bg: linear-gradient(180deg, #eef5f6 0%, #f3f7f8 35%, #f8fbfb 100%);
+      --header-bg: rgba(243, 247, 248, 0.92); --header-border: rgba(215, 227, 229, 0.85);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: var(--font); color: var(--ink); background: var(--body-bg);
+      line-height: 1.75;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-deep); }
+    .container { width: min(100% - 2rem, var(--container)); margin: 0 auto; }
+    .site-header {
+      position: sticky; top: 0; z-index: 40;
+      background: var(--header-bg); backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--header-border);
+    }
+    .site-header .container {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1rem; min-height: var(--header-h);
+    }
+    .brand { display: flex; align-items: center; gap: 0.75rem; color: inherit; }
+    .brand img { width: 2.75rem; height: 2.75rem; object-fit: contain; }
+    .brand strong { display: block; font-size: 1.05rem; color: var(--accent-deep); }
+    .brand span { display: block; font-size: 0.8rem; color: var(--muted); }
+    .site-nav { display: flex; flex-wrap: wrap; gap: 0.85rem 1.1rem; font-weight: 500; }
+    .site-nav a { color: var(--ink); }
+    .page-hero { padding: 2.5rem 0 1.25rem; }
+    .page-hero h1 { margin: 0 0 0.5rem; font-size: clamp(1.6rem, 4vw, 2.2rem); }
+    .page-hero p { margin: 0; color: var(--muted); max-width: 40rem; }
+    .articles-grid {
+      display: grid; gap: 1.1rem;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      padding-bottom: 3rem;
+    }
+    .article-card {
+      background: var(--surface); border: 1px solid var(--line);
+      border-radius: var(--radius); padding: 1.25rem 1.2rem;
+      display: grid; gap: 0.55rem; transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .article-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(15, 92, 101, 0.1);
+    }
+    .article-card time { font-size: 0.82rem; color: var(--muted); }
+    .article-card h2 { margin: 0; font-size: 1.12rem; line-height: 1.45; }
+    .article-card p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+    .tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+    .tags span {
+      font-size: 0.75rem; padding: 0.2rem 0.55rem; border-radius: 999px;
+      background: var(--paper-soft); color: var(--accent-deep);
+    }
+    .article-view {
+      display: none; background: var(--surface); border: 1px solid var(--line);
+      border-radius: var(--radius); padding: 1.5rem 1.35rem 2rem; margin-bottom: 3rem;
+    }
+    .article-view.is-open { display: block; }
+    .article-view .back {
+      display: inline-flex; margin-bottom: 1rem; font-weight: 600; color: var(--accent);
+    }
+    .article-view h1 { margin: 0 0 0.4rem; font-size: clamp(1.35rem, 3.5vw, 1.9rem); }
+    .article-view .meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.25rem; }
+    .article-view .body p { margin: 0 0 1rem; }
+    .cta-box {
+      margin-top: 1.5rem; padding: 1rem 1.1rem; border-radius: 14px;
+      background: var(--paper-soft); border: 1px solid var(--line);
+    }
+    .cta-box a { font-weight: 600; }
+    .site-footer {
+      padding: 2rem 0 2.5rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.92rem;
+    }
+    .site-footer strong { color: var(--ink); display: block; margin-bottom: 0.25rem; }
+    @media (max-width: 720px) {
+      .site-nav { display: none; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "مقالات آموزشی کلینیک دندانپزشکی سلامت",
+    "description": "آموزش ایمپلنت، ونیر و درمان‌های دندانپزشکی در بندر ماهشهر",
+    "url": "articles.html",
+    "publisher": {
+      "@type": "Dentist",
+      "name": "کلینیک دندانپزشکی سلامت — دکتر پوریا کمانگر",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "بندر ماهشهر",
+        "addressRegion": "خوزستان",
+        "streetAddress": "خیابان منتظری، جنب داروخانه راسخ، ساختمان سلامت، طبقه اول",
+        "addressCountry": "IR"
+      },
+      "sameAs": [
+        "https://www.instagram.com/dr.pourya.kamangar"
+      ]
+    }
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">
+        <img src="tooth-icon.png" width="44" height="44" alt="">
+        <span>
+          <strong>کلینیک دندانپزشکی سلامت</strong>
+          <span>مقالات آموزشی — دکتر پوریا کمانگر</span>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="منو">
+        <a href="index.html">خانه</a>
+        <a href="index.html#services">خدمات</a>
+        <a href="articles.html" aria-current="page">مقالات</a>
+        <a href="index.html#contact">تماس</a>
+        <a href="https://www.instagram.com/dr.pourya.kamangar" target="_blank" rel="noopener noreferrer">اینستاگرام</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="page-hero" id="listHero">
+      <h1>مقالات و آموزش دندانپزشکی</h1>
+      <p>راهنماهای کوتاه و کاربردی درباره ایمپلنت، ونیر، درمان ریشه و مراقبت دهان — ویژه بیماران بندر ماهشهر.</p>
+    </div>
+
+    <div class="articles-grid" id="articlesGrid" aria-live="polite"></div>
+    <article class="article-view" id="articleView" aria-live="polite"></article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <strong>کلینیک دندانپزشکی سلامت | بندر ماهشهر</strong>
+      خیابان منتظری، جنب داروخانه راسخ، ساختمان سلامت، طبقه اول<br>
+      <a href="https://www.instagram.com/dr.pourya.kamangar" target="_blank" rel="noopener noreferrer">@dr.pourya.kamangar</a>
+      ·
+      <a href="https://www.google.com/maps/search/?api=1&query=%DA%A9%D9%84%DB%8C%D9%86%DB%8C%DA%A9+%D8%AF%D9%86%D8%AF%D8%A7%D9%86%D9%BE%D8%B2%D8%B4%DA%A9%DB%8C+%D8%B3%D9%84%D8%A7%D9%85%D8%AA+%D8%AF%DA%A9%D8%AA%D8%B1+%D9%BE%D9%88%D8%B1%DB%8C%D8%A7+%DA%A9%D9%85%D8%A7%D9%86%DA%AF%D8%B1+%D9%85%D8%A7%D9%87%D8%B4%D9%87%D8%B1+%D9%85%D9%86%D8%AA%D8%B8%D8%B1%DB%8C" target="_blank" rel="noopener noreferrer">موقعیت در گوگل‌مپ</a>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var grid = document.getElementById("articlesGrid");
+      var view = document.getElementById("articleView");
+      var hero = document.getElementById("listHero");
+      var articles = [];
+
+      function fmtDate(iso) {
+        try {
+          return new Date(iso + "T12:00:00").toLocaleDateString("fa-IR");
+        } catch (e) {
+          return iso;
+        }
+      }
+
+      function showList() {
+        hero.style.display = "";
+        grid.style.display = "";
+        view.classList.remove("is-open");
+        view.innerHTML = "";
+        history.replaceState(null, "", "articles.html");
+      }
+
+      function showArticle(id) {
+        var a = articles.find(function (x) { return x.id === id; });
+        if (!a) return showList();
+        hero.style.display = "none";
+        grid.style.display = "none";
+        view.classList.add("is-open");
+        var paras = (a.body || []).map(function (p) { return "<p>" + p + "</p>"; }).join("");
+        var tags = (a.tags || []).map(function (t) { return "<span>" + t + "</span>"; }).join("");
+        view.innerHTML =
+          '<a class="back" href="articles.html">← بازگشت به مقالات</a>' +
+          "<h1>" + a.title + "</h1>" +
+          '<div class="meta">' + fmtDate(a.date) + " · دکتر پوریا کمانگر · بندر ماهشهر</div>" +
+          '<div class="tags">' + tags + "</div>" +
+          '<div class="body">' + paras + "</div>" +
+          '<div class="cta-box">نوبت و مشاوره: <a href="tel:09904299969">09904299969</a> · ' +
+          '<a href="https://www.instagram.com/dr.pourya.kamangar" target="_blank" rel="noopener noreferrer">اینستاگرام</a> · ' +
+          '<a href="index.html#contact">آدرس کلینیک</a></div>';
+        history.replaceState(null, "", "articles.html#" + encodeURIComponent(id));
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      function renderCards() {
+        grid.innerHTML = articles.map(function (a) {
+          return (
+            '<a class="article-card" href="#' + encodeURIComponent(a.id) + '" data-id="' + a.id + '">' +
+            "<time datetime=\"" + a.date + "\">" + fmtDate(a.date) + "</time>" +
+            "<h2>" + a.title + "</h2>" +
+            "<p>" + a.summary + "</p>" +
+            '<div class="tags">' + (a.tags || []).map(function (t) { return "<span>" + t + "</span>"; }).join("") + "</div>" +
+            "</a>"
+          );
+        }).join("");
+        grid.querySelectorAll(".article-card").forEach(function (card) {
+          card.addEventListener("click", function (e) {
+            e.preventDefault();
+            showArticle(card.getAttribute("data-id"));
+          });
+        });
+      }
+
+      function route() {
+        var id = decodeURIComponent((location.hash || "").replace(/^#/, ""));
+        if (id) showArticle(id); else showList();
+      }
+
+      fetch("articles.json", { cache: "no-store" })
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          articles = Array.isArray(data) ? data.slice().sort(function (a, b) {
+            return (b.date || "").localeCompare(a.date || "");
+          }) : [];
+          renderCards();
+          route();
+        })
+        .catch(function () {
+          grid.innerHTML = "<p>بارگذاری مقالات ممکن نشد. بعداً دوباره تلاش کنید.</p>";
+        });
+
+      window.addEventListener("hashchange", route);
+      view.addEventListener("click", function (e) {
+        var t = e.target;
+        if (t && t.classList && t.classList.contains("back")) {
+          e.preventDefault();
+          showList();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
